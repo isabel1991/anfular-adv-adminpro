@@ -1,4 +1,4 @@
-import { Component, Input, OnInit, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 
 
@@ -8,11 +8,9 @@ import { Component, Input, OnInit, Output } from '@angular/core';
   styles: [
   ]
 })
-export class Grafica1Component  {
+export class Grafica1Component {
 
-
-
-  public labels1: string[] = ['Pan', 'Resfrescos', 'Tacos'];
+  public labels1: string[] = ['Pan', 'Refresco', 'Tacos'];
   public data1 = [
     [10, 15, 40],
   ];
