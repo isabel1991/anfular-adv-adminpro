@@ -70,7 +70,7 @@ export class UsuariosComponent implements OnInit, OnDestroy {
     }
 
     this.busquedasService.buscar( 'usuarios', termino )
-        .subscribe( resp => {
+        .subscribe( (resp: Usuario[]) => {
 
           this.usuarios = resp;
 
@@ -80,15 +80,15 @@ export class UsuariosComponent implements OnInit, OnDestroy {
   eliminarUsuario( usuario: Usuario ) {
 
     if ( usuario.uid === this.usuarioService.uid ) {
-      return Swal.fire('Error', 'No puede borrarse a sí mismo', 'error');
+      return Swal.fire('Error', 'No puede borrarse a si mismo', 'error');
     }
 
     Swal.fire({
-      title: '¿Borrar usuario/a?',
-      text: `Está a punto de borrar a ${ usuario.nombre }`,
+      title: '¿Borrar usuario?',
+      text: `Esta a punto de borrar a ${ usuario.nombre }`,
       icon: 'question',
       showCancelButton: true,
-      confirmButtonText: 'Sí, borrarlo/a'
+      confirmButtonText: 'Si, borrarlo'
     }).then((result) => {
       if (result.value) {
         
@@ -97,8 +97,8 @@ export class UsuariosComponent implements OnInit, OnDestroy {
             
             this.cargarUsuarios();
             Swal.fire(
-              'Usuari@ borrado',
-              `${ usuario.nombre } fue eliminad@ correctamente`,
+              'Usuario borrado',
+              `${ usuario.nombre } fue eliminado correctamente`,
               'success'
             );
             
