@@ -13,7 +13,6 @@ const base_url = environment.base_url;
 })
 export class HospitalService {
 
-  public hospital: Hospital;
 
   constructor( private http: HttpClient ) { }
 
@@ -29,9 +28,6 @@ export class HospitalService {
     }
   }
 
-  get nombre():string {
-    return this.hospital.nombre || '';
-  }
 
   cargarHospitales() {
 

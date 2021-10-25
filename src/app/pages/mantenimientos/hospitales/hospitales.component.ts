@@ -66,9 +66,6 @@ export class HospitalesComponent implements OnInit, OnDestroy {
 
     this.hospitalService.actualizarHospital( hospital._id, hospital.nombre )
         .subscribe( resp => {
-          if(hospital.nombre === this.hospitalService.nombre){
-            return Swal.fire('Error', 'No puede actualizarse', 'error');
-          }
           Swal.fire( 'Actualizado', hospital.nombre, 'success' );
         });
 
